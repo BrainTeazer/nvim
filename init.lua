@@ -76,7 +76,7 @@ vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {f
 vim.api.nvim_create_autocmd('FileType', {
     pattern = {
         'svelte', 'markdown', 'yaml', 'lua', 'rust', 'typescript',
-        'javascript', 'c', 'cpp', 'cmake', 'txt', 'python' },
+        'javascript', 'c', 'cpp', 'cmake', 'txt', 'python', 'typst' },
     callback = function() vim.treesitter.start() end,
 })
 
@@ -104,7 +104,8 @@ vim.lsp.config('neocmake', {
 vim.lsp.enable({
     "clangd", "texlab", "lua_ls", "rust-analyzer",
     "svelte", "tailwindcss", "ts_ls", "emmet_language_server",
-    "emmet_ls", "neocmake", "ruff", "basedpyright"
+    "emmet_ls", "neocmake", "ruff", "basedpyright",
+    "tinymist"
 })
 vim.lsp.config("rust-analyzer", vim.lsp.config["rust_analyzer"])
 vim.lsp.config("clangd", {
